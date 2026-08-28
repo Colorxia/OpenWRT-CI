@@ -43,10 +43,12 @@ echo " "
 echo "=================================="
 echo "kdae-panel: 交叉编译 aarch64 面板"
 echo "=================================="
+cd "$KDAE_SRC"
 mkdir -p "$KDAE_BIN"
 CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -trimpath \
 	-ldflags "-s -w -X main.version=$KDAE_VER" \
 	-o "$KDAE_BIN/kdae-panel" ./cmd/kdae-panel
+[ -f "$KDAE_BIN/kdae-panel" ] || { echo "kdae-panel binary build failed!"; exit 1; }
 file "$KDAE_BIN/kdae-panel"
 
 echo " "
