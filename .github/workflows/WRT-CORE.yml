@@ -199,7 +199,8 @@ jobs:
         run: |
           cd ./wrt/
 
-          make -j$(nproc) || make -j1 V=s
+          #KDAE_PANEL_BIN/KDAE_PANEL_VERSION：kdae-panel 包要求的外部预编译二进制，未使用该包的配置中为空值
+          make -j$(nproc) KDAE_PANEL_BIN="${KDAE_PANEL_BIN}" KDAE_PANEL_VERSION="${KDAE_PANEL_VERSION}" || make -j1 V=s KDAE_PANEL_BIN="${KDAE_PANEL_BIN}" KDAE_PANEL_VERSION="${KDAE_PANEL_VERSION}"
 
       - name: Check Cache Source
         id: cache-source
