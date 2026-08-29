@@ -1,0 +1,27 @@
+#私有配置：精简软件包（在 GENERAL.txt 之后加载，=n 覆盖前面的 =y）
+#A 代理功能重复：HomeProxy/sing-box（本固件用 kdae-panel 管理 dae）
+CONFIG_PACKAGE_luci-app-homeproxy=n
+CONFIG_PACKAGE_sing-box=n
+#B GECOOS 企业网管客户端
+CONFIG_PACKAGE_gecoosac=n
+CONFIG_PACKAGE_luci-app-gecoosac=n
+#C Samba 文件共享全家桶（含内核 ksmbd 及 mDNS/DBus 依赖链）
+CONFIG_PACKAGE_luci-app-samba4=n
+CONFIG_PACKAGE_samba4-server=n
+CONFIG_PACKAGE_samba4-libs=n
+CONFIG_PACKAGE_wsdd2=n
+CONFIG_PACKAGE_avahi-dbus-daemon=n
+CONFIG_PACKAGE_libavahi-client=n
+CONFIG_PACKAGE_libavahi-dbus-support=n
+CONFIG_PACKAGE_libdaemon=n
+CONFIG_PACKAGE_dbus=n
+CONFIG_PACKAGE_libdbus=n
+CONFIG_PACKAGE_kmod-fs-ksmbd=n
+CONFIG_PACKAGE_kmod-fs-smbfs-common=n
+#D2 NVMe 工具（360v6 无 NVMe 接口）
+CONFIG_PACKAGE_nvme-cli=n
+CONFIG_PACKAGE_libnvme=n
+CONFIG_PACKAGE_kmod-nvme=n
+#D3 硬盘健康监测
+CONFIG_PACKAGE_smartmontools=n
+CONFIG_PACKAGE_smartmontools-drivedb=n
